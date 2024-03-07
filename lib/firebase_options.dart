@@ -73,8 +73,10 @@ class DefaultFirebaseOptions {
     projectId: 'vitti-14130',
     databaseURL: 'https://vitti-14130-default-rtdb.firebaseio.com',
     storageBucket: 'vitti-14130.appspot.com',
-    androidClientId: '928119471821-3mnlglatf0q8ms8js6roeruijf4bd894.apps.googleusercontent.com',
-    iosClientId: '928119471821-qqrf3gtlve94ftek1krbfdvnli8vlpcr.apps.googleusercontent.com',
+    androidClientId:
+        '928119471821-3mnlglatf0q8ms8js6roeruijf4bd894.apps.googleusercontent.com',
+    iosClientId:
+        '928119471821-qqrf3gtlve94ftek1krbfdvnli8vlpcr.apps.googleusercontent.com',
     iosBundleId: 'com.example.vittiHeritageApp',
   );
 }
