@@ -30,6 +30,33 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  cloud_firestore: ^4.15.4
+  curved_nav_bar: ^0.0.2
+  custom_info_window: ^1.0.1
+  firebase_auth: ^4.16.0
+  firebase_core: ^2.24.2
+  firebase_storage: ^11.6.0
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.3.10
+  geocoding: ^2.1.1
+  geolocator: ^10.1.0
+  get: ^4.6.6
+  get_storage: ^2.1.1
+  google_fonts: ^6.1.0
+  google_maps_flutter: ^2.5.3
+  http: ^1.2.0
+  iconsax: ^0.0.8
+  image: ^4.1.7
+  intl: ^0.19.0
+  ionicons: ^0.2.2
+  logger: ^2.0.2+1
+  lottie: ^3.0.0
+  rename: ^3.0.1
+  smooth_page_indicator: ^1.1.0
+  svg_flutter: ^0.0.1
+  url_launcher: ^6.2.3
+  velocity_x: ^4.1.1
+  curved_navigation_bar: ^1.0.3
 
 
   # The following adds the Cupertino Icons font to your application.

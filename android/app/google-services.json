@@ -1,0 +1,207 @@
+{
+  "project_info": {
+    "project_number": "928119471821",
+    "firebase_url": "https://vitti-14130-default-rtdb.firebaseio.com",
+    "project_id": "vitti-14130",
+    "storage_bucket": "vitti-14130.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928119471821:android:5264d244fe01a1dc86b384",
+        "android_client_info": {
+          "package_name": "com.codehq.facebook_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "928119471821-3mnlglatf0q8ms8js6roeruijf4bd894.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codehq.facebook_clone",
+            "certificate_hash": "ce89898331c4a02ab7c201dc493b0a8e3763a141"
+          }
+        },
+        {
+          "client_id": "928119471821-i8nls7gdvsfnjbe52ejehh9k7ooilei2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCJw6UlAjCIU9qsvwVsALsTwALOaJkgh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "928119471821-54q0ib8b9vi0io7u54oko6aimr4lghho.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "928119471821-jn4go4p52e0h1p4nrnvi0amfr8qekoct.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.vitti"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928119471821:android:a8c1da3c7eb2b4d086b384",
+        "android_client_info": {
+          "package_name": "com.example.loginpage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "928119471821-6pmsf3cpdnd0mp2egh65otlv2ueqhd65.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.loginpage",
+            "certificate_hash": "ce89898331c4a02ab7c201dc493b0a8e3763a141"
+          }
+        },
+        {
+          "client_id": "928119471821-i8nls7gdvsfnjbe52ejehh9k7ooilei2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCJw6UlAjCIU9qsvwVsALsTwALOaJkgh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "928119471821-54q0ib8b9vi0io7u54oko6aimr4lghho.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "928119471821-jn4go4p52e0h1p4nrnvi0amfr8qekoct.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.vitti"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928119471821:android:a504448441aeeffd86b384",
+        "android_client_info": {
+          "package_name": "com.example.vitti"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "928119471821-i8nls7gdvsfnjbe52ejehh9k7ooilei2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCJw6UlAjCIU9qsvwVsALsTwALOaJkgh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "928119471821-54q0ib8b9vi0io7u54oko6aimr4lghho.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "928119471821-jn4go4p52e0h1p4nrnvi0amfr8qekoct.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.vitti"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928119471821:android:89006cfcb47fdc9e86b384",
+        "android_client_info": {
+          "package_name": "com.example.vitti_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "928119471821-i8nls7gdvsfnjbe52ejehh9k7ooilei2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCJw6UlAjCIU9qsvwVsALsTwALOaJkgh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "928119471821-54q0ib8b9vi0io7u54oko6aimr4lghho.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "928119471821-jn4go4p52e0h1p4nrnvi0amfr8qekoct.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.vitti"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928119471821:android:ca48ee96f82b1fe986b384",
+        "android_client_info": {
+          "package_name": "com.example.vitti_heritage_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "928119471821-i8nls7gdvsfnjbe52ejehh9k7ooilei2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCJw6UlAjCIU9qsvwVsALsTwALOaJkgh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "928119471821-54q0ib8b9vi0io7u54oko6aimr4lghho.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "928119471821-jn4go4p52e0h1p4nrnvi0amfr8qekoct.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.vitti"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
