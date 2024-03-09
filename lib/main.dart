@@ -15,7 +15,7 @@ Future main() async {
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       title: "flutter demo",
-      home: OnboardingPage(),
+      home: Onboarding(),
     ),
   ));
 }
