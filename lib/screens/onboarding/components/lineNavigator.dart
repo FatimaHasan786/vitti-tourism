@@ -13,9 +13,9 @@ class LineNavigator extends StatelessWidget {
     final controller = OnBoardingController.instance;
     return Center(
       child: SmoothPageIndicator(
-        effect: ExpandingDotsEffect(
+        effect: const ExpandingDotsEffect(
             activeDotColor:  TColors.primaryBlue ,
-            dotHeight: 6),
+            dotHeight: 8),
         count: 3,
         controller: controller.pageController,
         onDotClicked: controller.dotNavigationClick,

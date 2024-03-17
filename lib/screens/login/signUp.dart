@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vitti_heritage_app/components/backPageButton.dart';
 import 'package:vitti_heritage_app/components/button.dart';
 import 'package:vitti_heritage_app/components/richText.dart';
@@ -10,11 +9,11 @@ import 'package:vitti_heritage_app/screens/login/components/orDivider.dart';
 import 'package:vitti_heritage_app/screens/login/components/passwordBox.dart';
 import 'package:vitti_heritage_app/screens/login/components/phoneCard.dart';
 import 'package:vitti_heritage_app/screens/login/components/textBox.dart';
-import 'package:vitti_heritage_app/screens/login/signUp.dart';
+import 'package:vitti_heritage_app/screens/login/login.dart';
 import 'package:vitti_heritage_app/utils/constants/colors.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class SignUp extends StatelessWidget {
+  const SignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +29,7 @@ class Login extends StatelessWidget {
                     fit: BoxFit.cover)),
           ),
           SingleChildScrollView(
-            physics: const AlwaysScrollableScrollPhysics(),
+            physics: AlwaysScrollableScrollPhysics(),
             child: Container(
               padding: const EdgeInsets.fromLTRB(15, 30, 15, 0),
               child: Column(
@@ -40,70 +39,52 @@ class Login extends StatelessWidget {
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     mainAxisSize: MainAxisSize.max,
-                    children: [BackPageButton()],
+                    children: [
+                      BackPageButton(),
+                    ],
                   ),
                   const SizedBox(
                     height: 20,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
-                        "VITTI",
-                        style: GoogleFonts.aboreto(
-                          fontSize: 35,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 3,
-                      ),
-                      Image.asset(
-                        "assets/images/logoSmall.png",
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
                   const RichTextField(
-                    text1: "Log in",
-                    text2: " to Start",
+                    text1: "Sign Up ",
+                    text2: " Now",
                     size: 33,
                     weight: FontWeight.bold,
                     color1: TColors.orange,
                     color2: Colors.black87,
-                    textAlign: TextAlign.left,
+                    textAlign: TextAlign.center,
                   ),
                   const RichTextField(
-                    text1: "If you need any support",
-                    text2: " Click Here.",
-                    size: 16,
-                    weight: FontWeight.w500,
-                    color1: Colors.black54,
-                    color2: TColors.primaryBlue,
-                    textAlign: TextAlign.center,
+                      textAlign: TextAlign.center,
+                      text1: "If you need any support",
+                      text2: " Click Here.",
+                      size: 16,
+                      weight: FontWeight.w500,
+                      color1: Colors.black54,
+                      color2: TColors.primaryBlue),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const TextBox(text: "Enter your e-mail"),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  const PasswordBox(
+                    text: 'Enter Password',
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  const PasswordBox(
+                    text: 'Re-Enter Password',
                   ),
                   const SizedBox(
                     height: 20,
                   ),
-                  const TextBox(
-                    text: 'vitti.heritage@gmail.com',
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  const PasswordBox(text: 'Enter 6 digit password'),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  RoundedBorderButton1(
-                    text: "Log In",
-                    onTap: () {
-                      Get.to(CustomTabBar());
-                    },
-                  ),
+                   RoundedBorderButton1(text: "Sign Up", onTap: () { 
+                    Get.to(CustomTabBar());
+                   },),
                   const SizedBox(
                     height: 10,
                   ),
@@ -113,25 +94,17 @@ class Login extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Get.to(const SignUp());
+                          Get.to(Login());
                         },
                         child: const RichTextField(
-                          text1: "Don't have an Account? ",
-                          text2: "Sign Up",
-                          size: 16,
-                          weight: FontWeight.w500,
-                          color1: Colors.black54,
-                          color2: TColors.primaryBlue,
-                          textAlign: TextAlign.left,
-                        ),
+                            textAlign: TextAlign.left,
+                            text1: "Already have an Account? ",
+                            text2: "Log In",
+                            size: 16,
+                            weight: FontWeight.w500,
+                            color1: Colors.black54,
+                            color2: TColors.primaryBlue),
                       ),
-                      TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            "Skip",
-                            style: GoogleFonts.poppins(
-                                color: TColors.primaryBlue, fontSize: 16),
-                          ))
                     ],
                   ),
                   const SizedBox(
@@ -149,7 +122,7 @@ class Login extends StatelessWidget {
                   const SizedBox(
                     height: 30,
                   ),
-                  PhoneCard(text: "Login With OTP", tap: () {}),
+                  PhoneCard(text: "Login With OTP", tap: () {})
                 ],
               ),
             ),
