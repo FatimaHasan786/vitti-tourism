@@ -1,5 +1,6 @@
 <div align='center'>
 
+<h1>Vitti - Your Travel Buddy</h1>
 <p>Vitti, derived from the Sanskrit word for "existence," is a comprehensive mobile application revolutionizing how tourists explore new cities. With an intuitive design and rich features, Vitti empowers users to maximize their travel experiences. Seamlessly navigate, access real-time information, and receive personalized recommendations—all in one app. Vitti simplifies travel planning, allowing adventurers to craft effective itineraries effortlessly.</p>
 
 <h4> <span> · </span> <a href="https://github.com/vipax808/vitti-tourism/blob/master/README.md"> Documentation </a> <span> · </span> <a href="https://github.com/vipax808/vitti-tourism/issues"> Report Bug </a> <span> · </span> <a href="https://github.com/vipax808/vitti-tourism/issues"> Request Feature </a> </h4>
