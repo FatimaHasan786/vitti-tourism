@@ -1,4 +1,4 @@
-[<div align='center'>
+<div align='center'>
 
 <h1>Vitti - Your Travel Buddy</h1>
 <p>Vitti, derived from the Sanskrit word for "existence," is a comprehensive mobile application revolutionizing how tourists explore new cities. With an intuitive design and rich features, Vitti empowers users to maximize their travel experiences. Seamlessly navigate, access real-time information, and receive personalized recommendations—all in one app. Vitti simplifies travel planning, allowing adventurers to craft effective itineraries effortlessly.</p>
@@ -15,6 +15,13 @@
 
 
 ## :star2: About the Project
+
+### :camera: Screenshots
+<div align="center"> <a href=""><img src="https://github.com/FatimaHasan786/vitti-tourism/assets/142893203/fdc4ad70-116c-411e-9386-d91c017bff8f" alt='image' width='800'/></a> </div>
+<div align="center"> <a href=""><img src="https://github.com/FatimaHasan786/vitti-tourism/assets/142893203/a4a6883f-449b-4f8e-9509-03fd6f7687e4" alt='image' width='800'/></a> </div>
+<div align="center"> <a href=""><img src="https://github.com/FatimaHasan786/vitti-tourism/assets/142893203/866b0407-4cc7-47bb-abb7-3b15cfd8af56" alt='image' width='800'/></a> </div>
+
+
 ### :space_invader: Tech Stack
 <details> <summary>Client</summary> <ul>
 <li><a href="">Flutter</a></li>
@@ -64,4 +71,3 @@ Please read the [Code of Conduct](https://github.com/FatimaHasan786/vitti-touris
 Sanskar Verma - - sanskarverma152@gmail.com
 
 Project Link: [https://github.com/FatimaHasan786/vitti-tourism](https://github.com/FatimaHasan786/vitti-tourism)
-](https://github.com/FatimaHasan786/vitti-tourism/assets/142893203/866b0407-4cc7-47bb-abb7-3b15cfd8af56)
