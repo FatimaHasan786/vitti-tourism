@@ -70,5 +70,6 @@ Please read the [Code of Conduct](https://github.com/FatimaHasan786/vitti-touris
 ## :handshake: Contact
 
 Sanskar Verma - - sanskarverma152@gmail.com
+Tarun Hasija  - - Tarunhasija999@gmail.com
 
 Project Link: [https://github.com/FatimaHasan786/vitti-tourism](https://github.com/FatimaHasan786/vitti-tourism)
