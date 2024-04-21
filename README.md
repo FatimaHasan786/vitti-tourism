@@ -17,7 +17,9 @@
 ## :star2: About the Project
 
 ### :camera: Screenshots
-<div align="left"> <a href=""><img src="https://github.com/FatimaHasan786/vitti-tourism/assets/142893203/fdc4ad70-116c-411e-9386-d91c017bff8f" alt='image' width='200'/></a> <a href=""><img src="https://github.com/FatimaHasan786/vitti-tourism/assets/142893203/a4a6883f-449b-4f8e-9509-03fd6f7687e4" alt='image' width='200'/></a> 
+<div align="left">
+<a href=""><img src="https://github.com/FatimaHasan786/vitti-tourism/assets/142893203/a4a6883f-449b-4f8e-9509-03fd6f7687e4" alt='image' width='200'/></a> 
+<a href=""><img src="https://github.com/FatimaHasan786/vitti-tourism/assets/142893203/fdc4ad70-116c-411e-9386-d91c017bff8f" alt='image' width='200'/></a> 
 <a href=""><img src="https://github.com/FatimaHasan786/vitti-tourism/assets/142893203/866b0407-4cc7-47bb-abb7-3b15cfd8af56" alt='image' width='200'/></a>
 </div>
 
