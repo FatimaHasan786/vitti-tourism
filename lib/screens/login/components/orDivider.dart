@@ -8,7 +8,7 @@ class OrDivider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextDivider(
-      text: Text("or",style: GoogleFonts.poppins(fontSize:16),),
+      text: Text("Or",style: GoogleFonts.poppins(fontSize:12,fontWeight:FontWeight.w500),),
     );
   }
 }

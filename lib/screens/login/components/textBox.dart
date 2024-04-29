@@ -15,7 +15,9 @@ class TextBox extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15),
               ),
               hintText: text,
-              hintStyle: GoogleFonts.poppins(),
+              hintStyle: GoogleFonts.poppins(
+                fontSize: 14
+              ),
             ));
   }
 }

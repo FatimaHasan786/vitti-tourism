@@ -16,19 +16,19 @@ class RoundedBorderButton1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 65,
+      height: 55,
       width: MediaQuery.sizeOf(context).width,
       child: ElevatedButton(
         onPressed: onTap,
         style: ElevatedButton.styleFrom(
             shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
             backgroundColor: TColors.primaryBlue),
         child: Text(
           text,
           textAlign: TextAlign.center,
           style: GoogleFonts.poppins(
-              fontSize: 20, fontWeight: FontWeight.w500, color: Colors.white),
+              fontSize: 16, fontWeight: FontWeight.w500, color: Colors.white),
         ),
       ),
     );

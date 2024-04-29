@@ -15,7 +15,7 @@ class LineNavigator extends StatelessWidget {
       child: SmoothPageIndicator(
         effect: const ExpandingDotsEffect(
             activeDotColor:  TColors.primaryBlue ,
-            dotHeight: 8),
+            dotHeight: 6),
         count: 3,
         controller: controller.pageController,
         onDotClicked: controller.dotNavigationClick,

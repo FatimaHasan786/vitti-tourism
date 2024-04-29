@@ -49,7 +49,7 @@ class SignUp extends StatelessWidget {
                   const RichTextField(
                     text1: "Sign Up ",
                     text2: " Now",
-                    size: 33,
+                    size: 32,
                     weight: FontWeight.bold,
                     color1: TColors.orange,
                     color2: Colors.black87,
@@ -59,7 +59,7 @@ class SignUp extends StatelessWidget {
                       textAlign: TextAlign.center,
                       text1: "If you need any support",
                       text2: " Click Here.",
-                      size: 16,
+                      size: 14,
                       weight: FontWeight.w500,
                       color1: Colors.black54,
                       color2: TColors.primaryBlue),
@@ -68,19 +68,19 @@ class SignUp extends StatelessWidget {
                   ),
                   const TextBox(text: "Enter your e-mail"),
                   const SizedBox(
-                    height: 30,
+                    height: 15,
                   ),
                   const PasswordBox(
                     text: 'Enter Password',
                   ),
                   const SizedBox(
-                    height: 30,
+                    height: 15,
                   ),
                   const PasswordBox(
                     text: 'Re-Enter Password',
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 15,
                   ),
                    RoundedBorderButton1(text: "Sign Up", onTap: () { 
                     Get.to(CustomTabBar());
@@ -100,7 +100,7 @@ class SignUp extends StatelessWidget {
                             textAlign: TextAlign.left,
                             text1: "Already have an Account? ",
                             text2: "Log In",
-                            size: 16,
+                            size: 15,
                             weight: FontWeight.w500,
                             color1: Colors.black54,
                             color2: TColors.primaryBlue),
@@ -108,11 +108,11 @@ class SignUp extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 15,
                   ),
                   const OrDivider(),
                   const SizedBox(
-                    height: 20,
+                    height: 15,
                   ),
                   GoogleCard(
                     image: "assets/images/google.webp",
@@ -120,9 +120,9 @@ class SignUp extends StatelessWidget {
                     tap: () {},
                   ),
                   const SizedBox(
-                    height: 30,
+                    height: 15,
                   ),
-                  PhoneCard(text: "Login With OTP", tap: () {})
+                  PhoneCard(text: "Login with OTP", tap: () {})
                 ],
               ),
             ),

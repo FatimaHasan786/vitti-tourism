@@ -10,6 +10,7 @@ import 'package:vitti_heritage_app/screens/login/components/orDivider.dart';
 import 'package:vitti_heritage_app/screens/login/components/passwordBox.dart';
 import 'package:vitti_heritage_app/screens/login/components/phoneCard.dart';
 import 'package:vitti_heritage_app/screens/login/components/textBox.dart';
+import 'package:vitti_heritage_app/screens/login/phone.dart';
 import 'package:vitti_heritage_app/screens/login/signUp.dart';
 import 'package:vitti_heritage_app/utils/constants/colors.dart';
 
@@ -52,7 +53,7 @@ class Login extends StatelessWidget {
                       Text(
                         "VITTI",
                         style: GoogleFonts.aboreto(
-                          fontSize: 35,
+                          fontSize: 32,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -65,12 +66,12 @@ class Login extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 5,
                   ),
                   const RichTextField(
                     text1: "Log in",
                     text2: " to Start",
-                    size: 33,
+                    size: 32,
                     weight: FontWeight.bold,
                     color1: TColors.orange,
                     color2: Colors.black87,
@@ -79,24 +80,24 @@ class Login extends StatelessWidget {
                   const RichTextField(
                     text1: "If you need any support",
                     text2: " Click Here.",
-                    size: 16,
+                    size: 14,
                     weight: FontWeight.w500,
                     color1: Colors.black54,
                     color2: TColors.primaryBlue,
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 25,
                   ),
                   const TextBox(
                     text: 'vitti.heritage@gmail.com',
                   ),
                   const SizedBox(
-                    height: 30,
+                    height: 20,
                   ),
                   const PasswordBox(text: 'Enter 6 digit password'),
                   const SizedBox(
-                    height: 30,
+                    height: 20,
                   ),
                   RoundedBorderButton1(
                     text: "Log In",
@@ -118,7 +119,7 @@ class Login extends StatelessWidget {
                         child: const RichTextField(
                           text1: "Don't have an Account? ",
                           text2: "Sign Up",
-                          size: 16,
+                          size: 15,
                           weight: FontWeight.w500,
                           color1: Colors.black54,
                           color2: TColors.primaryBlue,
@@ -130,16 +131,16 @@ class Login extends StatelessWidget {
                           child: Text(
                             "Skip",
                             style: GoogleFonts.poppins(
-                                color: TColors.primaryBlue, fontSize: 16),
+                                color: TColors.primaryBlue, fontSize: 15),
                           ))
                     ],
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 15,
                   ),
                   const OrDivider(),
                   const SizedBox(
-                    height: 20,
+                    height: 15,
                   ),
                   GoogleCard(
                     image: "assets/images/google.webp",
@@ -147,9 +148,9 @@ class Login extends StatelessWidget {
                     tap: () {},
                   ),
                   const SizedBox(
-                    height: 30,
+                    height: 15,
                   ),
-                  PhoneCard(text: "Login With OTP", tap: () {}),
+                  PhoneCard(text: "Login With OTP", tap: () {Get.to(PhonePage());}),
                 ],
               ),
             ),

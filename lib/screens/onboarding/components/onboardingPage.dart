@@ -26,7 +26,7 @@ class onBoardingPage extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: MediaQuery.sizeOf(context).height / 2,
+            height: MediaQuery.sizeOf(context).height / 2.2,
             width: MediaQuery.sizeOf(context).width,
             decoration: BoxDecoration(
                 borderRadius: const BorderRadius.only(
@@ -46,7 +46,7 @@ class onBoardingPage extends StatelessWidget {
                   child: RichTextField(
                     text1: text1,
                     text2: text2,
-                    size: 30,
+                    size: 26,
                     weight: FontWeight.w700,
                     color1: Colors.black,
                     color2: TColors.orange,
@@ -61,7 +61,7 @@ class onBoardingPage extends StatelessWidget {
                   child: Text(subTitle,
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.w500,
                           color: Colors.black45)),
                 ),

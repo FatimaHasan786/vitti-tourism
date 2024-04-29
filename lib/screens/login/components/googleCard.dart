@@ -18,19 +18,20 @@ class GoogleCard extends StatelessWidget {
     return GestureDetector(
       onTap: tap,
       child: Container(
-        height: 60,
+        height: 55,
         width: MediaQuery.sizeOf(context).width / 1.2,
         decoration: BoxDecoration(
+          color: Colors.transparent,
           borderRadius: BorderRadius.circular(15),
-          border: Border.all(color: Colors.black45),
+          border: Border.all(color: Colors.black45.withOpacity(0.2)),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image(
               image: AssetImage(image),
-              height: 30,
-              width: 30,
+              height: 25,
+              width: 25,
             ),
             const SizedBox(
               width: 5,
@@ -38,7 +39,8 @@ class GoogleCard extends StatelessWidget {
             Text(
               text,
               style: GoogleFonts.poppins(
-                  fontSize: 22, fontWeight: FontWeight.w500),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500),
             ),
           ],
         ),
