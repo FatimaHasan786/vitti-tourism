@@ -78,3 +78,4 @@ class DefaultFirebaseOptions {
     iosBundleId: 'com.example.vittiHeritageApp',
   );
 }
+
