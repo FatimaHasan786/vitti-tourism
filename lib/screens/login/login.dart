@@ -14,8 +14,17 @@ import 'package:vitti_heritage_app/screens/login/phone.dart';
 import 'package:vitti_heritage_app/screens/login/signUp.dart';
 import 'package:vitti_heritage_app/utils/constants/colors.dart';
 
-class Login extends StatelessWidget {
+
+class Login extends StatefulWidget {
   const Login({super.key});
+
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  final formkey = GlobalKey<FormState>();
+  final scaffoldkey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -89,22 +98,30 @@ class Login extends StatelessWidget {
                   const SizedBox(
                     height: 25,
                   ),
-                  const TextBox(
-                    text: 'vitti.heritage@gmail.com',
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const PasswordBox(text: 'Enter 6 digit password'),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  RoundedBorderButton1(
-                    text: "Log In",
-                    onTap: () {
-                      Get.to(CustomTabBar());
-                    },
-                  ),
+                  Form(
+                    autovalidateMode: AutovalidateMode.always,
+                      child: Column(
+                    children: [
+                      const TextBox(
+                        text: 'vitti.heritage@gmail.com',
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      const PasswordBox(
+                        
+                        text: 'Enter 6 digit password'),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      RoundedBorderButton1(
+                        text: "Log In",
+                        onTap: () {
+                          Get.to(CustomTabBar());
+                        },
+                      ),
+                    ],
+                  )),
                   const SizedBox(
                     height: 10,
                   ),
@@ -150,7 +167,11 @@ class Login extends StatelessWidget {
                   const SizedBox(
                     height: 15,
                   ),
-                  PhoneCard(text: "Login With OTP", tap: () {Get.to(PhonePage());}),
+                  PhoneCard(
+                      text: "Login With OTP",
+                      tap: () {
+                        Get.to(PhonePage());
+                      }),
                 ],
               ),
             ),
