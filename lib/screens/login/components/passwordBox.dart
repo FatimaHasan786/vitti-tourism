@@ -1,16 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vitti_heritage_app/Auth/Validator/TextBoxValidator.dart';
 
 import 'package:vitti_heritage_app/screens/login/controller/passwordController.dart';
 import 'package:wc_form_validators/wc_form_validators.dart';
 
 class PasswordBox extends StatelessWidget {
-  const PasswordBox({super.key, required this.text,});
+  const PasswordBox({
+    super.key,
+    required this.text,
+    this.passwordValidator,
+    this.onSaved,
+    this.valueKey, required this.passwordcontroller,
+  });
 
   final String text;
- 
-  
+  final ValueKey? valueKey;
+  final String? Function(String?)? passwordValidator;
+  final void Function(String)? onSaved;
+  final TextEditingController passwordcontroller;
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +27,9 @@ class PasswordBox extends StatelessWidget {
         init: PasswordController(),
         builder: (controller) {
           return TextFormField(
-
-            validator: Validators.patternRegExp(r"^(?=.*?[A-Za-z])(?=.*?[0-9])(?=.*?[!@#\$&*~\S]).{8,}$" as RegExp,'Password is not a valid password'),
+            controller: passwordcontroller,
+            onSaved: onSaved != null ? (value) => onSaved!(value!) : null,
+            validator: passwordValidator,
             obscureText: controller.showPassword.value,
             decoration: InputDecoration(
               suffixIcon: InkWell(

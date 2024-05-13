@@ -53,7 +53,7 @@ class PhonePage extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(height: 20,),
-                  TextBox(text: "Enter your Mobile No."),
+                  // TextBox(text: "Enter your Mobile No.", controller: ,),  // phone authnications
                   SizedBox(height: 25,),
                   RoundedBorderButton1(text: "Send OTP", onTap: (){}),
                   SizedBox(height: 30,),
