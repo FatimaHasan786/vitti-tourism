@@ -20,7 +20,7 @@ Future main() async {
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       title: "flutter demo",
-      home: HomePage(),
+      home: Login(),
     ),
   ));
 }

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vitti_heritage_app/Auth/EmailAndPasswordAuth/EmailAndPasswordAuth.dart';
+import 'package:vitti_heritage_app/Auth/Validator/TextBoxValidator.dart';
 import 'package:vitti_heritage_app/components/backPageButton.dart';
 import 'package:vitti_heritage_app/components/button.dart';
 import 'package:vitti_heritage_app/components/richText.dart';
@@ -13,9 +16,27 @@ import 'package:vitti_heritage_app/screens/login/components/textBox.dart';
 import 'package:vitti_heritage_app/screens/login/phone.dart';
 import 'package:vitti_heritage_app/screens/login/signUp.dart';
 import 'package:vitti_heritage_app/utils/constants/colors.dart';
+import 'package:wc_form_validators/wc_form_validators.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({super.key});
+
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  final formkey = GlobalKey<FormState>();
+  final _auth = AuthService();
+  final _email = TextEditingController();
+  final _password = TextEditingController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    _email.dispose();
+    _password.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -89,22 +110,31 @@ class Login extends StatelessWidget {
                   const SizedBox(
                     height: 25,
                   ),
-                  const TextBox(
-                    text: 'vitti.heritage@gmail.com',
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const PasswordBox(text: 'Enter 6 digit password'),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  RoundedBorderButton1(
-                    text: "Log In",
-                    onTap: () {
-                      Get.to(CustomTabBar());
-                    },
-                  ),
+                  Form(
+                      key: formkey,
+                      autovalidateMode: AutovalidateMode.always,
+                      child: Column(
+                        children: [
+                          TextBox(
+                            controller: _email,
+                            emailValidator: Validator.validateEmail,
+                            text: 'vitti.heritage@gmail.com',
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          PasswordBox(
+                            passwordcontroller: _password,
+                            valueKey: ValueKey('password'),
+                            passwordValidator: Validator.validatePassword,
+                            text: 'Enter 6 digit password',
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          RoundedBorderButton1(text: "Log In", onTap: _Login),
+                        ],
+                      )),
                   const SizedBox(
                     height: 10,
                   ),
@@ -150,7 +180,11 @@ class Login extends StatelessWidget {
                   const SizedBox(
                     height: 15,
                   ),
-                  PhoneCard(text: "Login With OTP", tap: () {Get.to(PhonePage());}),
+                  PhoneCard(
+                      text: "Login With OTP",
+                      tap: () {
+                        Get.to(PhonePage());
+                      }),
                 ],
               ),
             ),
@@ -158,5 +192,14 @@ class Login extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  _Login() async {
+    final user =
+        await _auth.loginUserWithEmailAndPassword(_email.text, _password.text);
+    if (user != null) {
+      print("User Logged in");
+      Get.to(CustomTabBar());
+    }
   }
 }

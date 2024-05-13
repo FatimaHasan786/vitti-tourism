@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
+import 'package:vitti_heritage_app/Auth/EmailAndPasswordAuth/EmailAndPasswordAuth.dart';
+import 'package:vitti_heritage_app/Auth/Validator/TextBoxValidator.dart';
 import 'package:vitti_heritage_app/components/backPageButton.dart';
 import 'package:vitti_heritage_app/components/button.dart';
 import 'package:vitti_heritage_app/components/richText.dart';
@@ -12,8 +15,24 @@ import 'package:vitti_heritage_app/screens/login/components/textBox.dart';
 import 'package:vitti_heritage_app/screens/login/login.dart';
 import 'package:vitti_heritage_app/utils/constants/colors.dart';
 
-class SignUp extends StatelessWidget {
+class SignUp extends StatefulWidget {
   const SignUp({super.key});
+
+  @override
+  State<SignUp> createState() => _SignUpState();
+}
+
+class _SignUpState extends State<SignUp> {
+  final _email = TextEditingController();
+  final _password = TextEditingController();
+  final _auth = AuthService();
+
+  @override
+  void dispose() {
+    _email.dispose();
+    _password.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,25 +85,39 @@ class SignUp extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  const TextBox(text: "Enter your e-mail"),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  const PasswordBox(
-                    text: 'Enter Password',
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  const PasswordBox(
-                    text: 'Re-Enter Password',
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                   RoundedBorderButton1(text: "Sign Up", onTap: () { 
-                    Get.to(CustomTabBar());
-                   },),
+                  Form(
+                      autovalidateMode: AutovalidateMode.always,
+                      child: Column(
+                        children: [
+                          TextBox(
+                            text: "Enter your e-mail",
+                            emailValidator: Validator.validateEmail,
+                            controller: _email,
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          PasswordBox(
+                            passwordcontroller: _password,
+                            passwordValidator: Validator.validatePassword,
+                            text: 'Enter Password',
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          PasswordBox(
+                            passwordValidator: Validator.validatePassword,
+                            text: 'Re-Enter Password',
+                            passwordcontroller: _password,
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                        ],
+                      )),
+                  RoundedBorderButton1(
+                      text: "Sign Up",
+                      onTap: _signUp),
                   const SizedBox(
                     height: 10,
                   ),
@@ -130,5 +163,14 @@ class SignUp extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  _signUp() async {
+    final user =
+        await _auth.createUserWithEmailAndPassword(_email.text, _password.text);
+    if (user != null) {
+      print("user created Successfully");
+      Get.to(CustomTabBar());
+    }
   }
 }
