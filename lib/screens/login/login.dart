@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vitti_heritage_app/Auth/EmailAndPasswordAuth/EmailAndPasswordAuth.dart';
 import 'package:vitti_heritage_app/Auth/Validator/TextBoxValidator.dart';
 import 'package:vitti_heritage_app/components/backPageButton.dart';
 import 'package:vitti_heritage_app/components/button.dart';
 import 'package:vitti_heritage_app/components/richText.dart';
 import 'package:vitti_heritage_app/navgation/tabBarNavigation.dart';
+import 'package:vitti_heritage_app/screens/home/home.dart';
 import 'package:vitti_heritage_app/screens/login/components/googleCard.dart';
 import 'package:vitti_heritage_app/screens/login/components/orDivider.dart';
 import 'package:vitti_heritage_app/screens/login/components/passwordBox.dart';
@@ -16,7 +19,6 @@ import 'package:vitti_heritage_app/screens/login/components/textBox.dart';
 import 'package:vitti_heritage_app/screens/login/phone.dart';
 import 'package:vitti_heritage_app/screens/login/signUp.dart';
 import 'package:vitti_heritage_app/utils/constants/colors.dart';
-import 'package:wc_form_validators/wc_form_validators.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -26,6 +28,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
   final formkey = GlobalKey<FormState>();
   final _auth = AuthService();
   final _email = TextEditingController();
@@ -132,7 +135,7 @@ class _LoginState extends State<Login> {
                           const SizedBox(
                             height: 20,
                           ),
-                          RoundedBorderButton1(text: "Log In", onTap: _Login),
+                          RoundedBorderButton1(text: "Log In", onTap: () => _Login(context)),
                         ],
                       )),
                   const SizedBox(
@@ -175,7 +178,7 @@ class _LoginState extends State<Login> {
                   GoogleCard(
                     image: "assets/images/google.webp",
                     text: "Google",
-                    tap: () {},
+                    tap: () => _handleSignIn(context),
                   ),
                   const SizedBox(
                     height: 15,
@@ -194,12 +197,62 @@ class _LoginState extends State<Login> {
     );
   }
 
-  _Login() async {
-    final user =
-        await _auth.loginUserWithEmailAndPassword(_email.text, _password.text);
+_Login(BuildContext context) async {
+  try {
+    final user = await _auth.loginUserWithEmailAndPassword(
+        _email.text, _password.text);
+
     if (user != null) {
       print("User Logged in");
+
+      // Save login status
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      await prefs.setBool("isLoggedIn", true);
+
+      // Show Snackbar for successful login
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('User logged in successfully'),
+          duration: Duration(seconds: 2),
+        ),
+      );
+
       Get.to(CustomTabBar());
+    } else {
+      // Show Snackbar for invalid email or password
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Invalid email or password'),
+          duration: Duration(seconds: 2),
+        ),
+      );
     }
+  } catch (error) {
+    // Show Snackbar for login errors
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('An error occurred: ${error.toString()}'),
+        duration: Duration(seconds: 2),
+      ),
+    );
   }
+}
+
+
+  
+Future<void> _handleSignIn(BuildContext context) async {
+  try {
+    final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+    if (googleUser != null) {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setBool('isLoggedIn', true);
+      Get.off(() => HomePage()); // Navigate to HomePage and remove previous routes
+    } else {
+      // User cancelled sign-in process
+      print("User cancelled sign-in process");
+    }
+  } catch (e) {
+    print("Error signing in: $e");
+  }
+}
 }

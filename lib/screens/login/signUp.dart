@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
@@ -7,6 +9,7 @@ import 'package:vitti_heritage_app/components/backPageButton.dart';
 import 'package:vitti_heritage_app/components/button.dart';
 import 'package:vitti_heritage_app/components/richText.dart';
 import 'package:vitti_heritage_app/navgation/tabBarNavigation.dart';
+import 'package:vitti_heritage_app/screens/home/home.dart';
 import 'package:vitti_heritage_app/screens/login/components/googleCard.dart';
 import 'package:vitti_heritage_app/screens/login/components/orDivider.dart';
 import 'package:vitti_heritage_app/screens/login/components/passwordBox.dart';
@@ -116,8 +119,7 @@ class _SignUpState extends State<SignUp> {
                         ],
                       )),
                   RoundedBorderButton1(
-                      text: "Sign Up",
-                      onTap: _signUp),
+                      text: "Sign Up", onTap:() => _signup(context)),
                   const SizedBox(
                     height: 10,
                   ),
@@ -165,12 +167,20 @@ class _SignUpState extends State<SignUp> {
     );
   }
 
-  _signUp() async {
-    final user =
-        await _auth.createUserWithEmailAndPassword(_email.text, _password.text);
-    if (user != null) {
-      print("user created Successfully");
-      Get.to(CustomTabBar());
+  Future<void> _signup(BuildContext context) async {
+    try {
+      await _auth.signUpWithEmailAndPassword(
+          email: _email.text, password: _password.text);
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text("User Created Successfully"),
+        duration: Duration(seconds: 2),
+      ));
+      Get.to(() => HomePage());
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text("An error occured : $e"),
+        duration: Duration(seconds: 2),
+      ));
     }
   }
 }

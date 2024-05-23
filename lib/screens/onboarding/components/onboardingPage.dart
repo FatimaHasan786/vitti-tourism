@@ -72,7 +72,7 @@ class onBoardingPage extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                RoundedBorderButton1(text: btnText, onTap: () {OnBoardingController.instance.nextPage(); },)
+                RoundedBorderButton1(text: btnText, onTap: () {OnBoardingController.instance.nextPage(context); },)
               ],
             ),
           ),
