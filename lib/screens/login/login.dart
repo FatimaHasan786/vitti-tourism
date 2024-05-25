@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
@@ -10,7 +11,7 @@ import 'package:vitti_heritage_app/components/backPageButton.dart';
 import 'package:vitti_heritage_app/components/button.dart';
 import 'package:vitti_heritage_app/components/richText.dart';
 import 'package:vitti_heritage_app/navgation/tabBarNavigation.dart';
-import 'package:vitti_heritage_app/screens/home/home.dart';
+
 import 'package:vitti_heritage_app/screens/login/components/googleCard.dart';
 import 'package:vitti_heritage_app/screens/login/components/orDivider.dart';
 import 'package:vitti_heritage_app/screens/login/components/passwordBox.dart';
@@ -135,7 +136,8 @@ class _LoginState extends State<Login> {
                           const SizedBox(
                             height: 20,
                           ),
-                          RoundedBorderButton1(text: "Log In", onTap: () => _Login(context)),
+                          RoundedBorderButton1(
+                              text: "Log In", onTap: () => _Login(context)),
                         ],
                       )),
                   const SizedBox(
@@ -178,7 +180,14 @@ class _LoginState extends State<Login> {
                   GoogleCard(
                     image: "assets/images/google.webp",
                     text: "Google",
-                    tap: () => _handleSignIn(context),
+                    tap: () async {
+                      User? user = await _auth.signInWithGoogle();
+                      if (user != null) {
+                        print("User signed in : ${user.displayName}");
+                      } else {
+                        print('sign in failed');
+                      }
+                    },
                   ),
                   const SizedBox(
                     height: 15,
@@ -197,62 +206,44 @@ class _LoginState extends State<Login> {
     );
   }
 
-_Login(BuildContext context) async {
-  try {
-    final user = await _auth.loginUserWithEmailAndPassword(
-        _email.text, _password.text);
+  _Login(BuildContext context) async {
+    try {
+      final user = await _auth.loginUserWithEmailAndPassword(
+          _email.text, _password.text);
 
-    if (user != null) {
-      print("User Logged in");
+      if (user != null) {
+        print("User Logged in");
 
-      // Save login status
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      await prefs.setBool("isLoggedIn", true);
+        // Save login status
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        await prefs.setBool("isLoggedIn", true);
 
-      // Show Snackbar for successful login
+        // Show Snackbar for successful login
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('User logged in successfully'),
+            duration: Duration(seconds: 2),
+          ),
+        );
+
+        Get.to(CustomTabBar());
+      } else {
+        // Show Snackbar for invalid email or password
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Invalid email or password'),
+            duration: Duration(seconds: 2),
+          ),
+        );
+      }
+    } catch (error) {
+      // Show Snackbar for login errors
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('User logged in successfully'),
-          duration: Duration(seconds: 2),
-        ),
-      );
-
-      Get.to(CustomTabBar());
-    } else {
-      // Show Snackbar for invalid email or password
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Invalid email or password'),
+          content: Text('An error occurred: ${error.toString()}'),
           duration: Duration(seconds: 2),
         ),
       );
     }
-  } catch (error) {
-    // Show Snackbar for login errors
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('An error occurred: ${error.toString()}'),
-        duration: Duration(seconds: 2),
-      ),
-    );
   }
-}
-
-
-  
-Future<void> _handleSignIn(BuildContext context) async {
-  try {
-    final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
-    if (googleUser != null) {
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      prefs.setBool('isLoggedIn', true);
-      Get.off(() => HomePage()); // Navigate to HomePage and remove previous routes
-    } else {
-      // User cancelled sign-in process
-      print("User cancelled sign-in process");
-    }
-  } catch (e) {
-    print("Error signing in: $e");
-  }
-}
 }

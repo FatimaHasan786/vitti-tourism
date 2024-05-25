@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:vitti_heritage_app/Auth/Validator/TextBoxValidator.dart';
 
 import 'package:vitti_heritage_app/screens/login/controller/passwordController.dart';
-import 'package:wc_form_validators/wc_form_validators.dart';
 
 class PasswordBox extends StatelessWidget {
   const PasswordBox({

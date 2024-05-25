@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vitti_heritage_app/Auth/Validator/TextBoxValidator.dart';
-import 'package:wc_form_validators/wc_form_validators.dart';
 
 class TextBox extends StatelessWidget {
   const TextBox({super.key, required this.text, this.emailValidator, this.onSaved, this.valueKey, required this.controller});

@@ -3,23 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>928119471821-qqrf3gtlve94ftek1krbfdvnli8vlpcr.apps.googleusercontent.com</string>
+	<string>690265754298-2mjbvskg9umuaqea613ssqfdeltvrjs4.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.928119471821-qqrf3gtlve94ftek1krbfdvnli8vlpcr</string>
-	<key>ANDROID_CLIENT_ID</key>
-	<string>928119471821-3mnlglatf0q8ms8js6roeruijf4bd894.apps.googleusercontent.com</string>
+	<string>com.googleusercontent.apps.690265754298-2mjbvskg9umuaqea613ssqfdeltvrjs4</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDTqfxoSn4jEvuJnPSySlTtVhJumAK7KUE</string>
+	<string>AIzaSyBWSOOT1Esjd-pS38O5iDjONwb-lusvIRI</string>
 	<key>GCM_SENDER_ID</key>
-	<string>928119471821</string>
+	<string>690265754298</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.example.vittiHeritageApp</string>
 	<key>PROJECT_ID</key>
-	<string>vitti-14130</string>
+	<string>vitti-3be83</string>
 	<key>STORAGE_BUCKET</key>
-	<string>vitti-14130.appspot.com</string>
+	<string>vitti-3be83.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,8 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:928119471821:ios:1fa6ee7f46a68e3386b384</string>
-	<key>DATABASE_URL</key>
-	<string>https://vitti-14130-default-rtdb.firebaseio.com</string>
+	<string>1:690265754298:ios:79d981009197c487325083</string>
 </dict>
 </plist>

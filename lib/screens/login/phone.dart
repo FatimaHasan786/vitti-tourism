@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:otp_text_field/otp_field.dart';
+import 'package:otp_text_field/otp_text_field.dart';
 import 'package:otp_text_field/style.dart';
 import 'package:vitti_heritage_app/components/backPageButton.dart';
 import 'package:vitti_heritage_app/components/button.dart';
 import 'package:vitti_heritage_app/components/richText.dart';
-import 'package:vitti_heritage_app/screens/login/components/textBox.dart';
 import 'package:vitti_heritage_app/utils/constants/colors.dart';
+
 
 class PhonePage extends StatelessWidget {
   const PhonePage({super.key});
